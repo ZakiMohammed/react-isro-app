@@ -5,16 +5,19 @@ import { useAppDispatch, useAppSelector } from '../hooks';
 import { setLoading } from '../reducers/AppReducers';
 import PageTitle from '../components/PageTitle';
 import {
+  selectCountries,
   selectCustomerSatellitesFiltered,
   getAll as getCustomerSatellites,
   clearSearch,
   search,
   selectSearchValue,
+  getAllCountries,
 } from '../reducers/CustomerSatelliteReducers';
 import NoRecords from '../components/NoRecords';
 import Search from '../components/Search';
 
 const CustomerSatellite = () => {
+  const countries = useAppSelector(selectCountries);
   const filtered = useAppSelector(selectCustomerSatellitesFiltered);
   const searchValue = useAppSelector(selectSearchValue);
   const dispatch = useAppDispatch();
@@ -25,6 +28,11 @@ const CustomerSatellite = () => {
         dispatch(setLoading(true));
         const data = await appService.getCustomerSatellites();
         dispatch(getCustomerSatellites(data.customer_satellites));
+
+        if (countries === null) {
+          const dataCountries = await appService.getCountries();
+          dispatch(getAllCountries(dataCountries));
+        }
       } catch (error) {
         console.log('Error Occurred', error);
       } finally {
@@ -41,8 +49,8 @@ const CustomerSatellite = () => {
     <Container>
       <PageTitle title="🛰️ Customer Satellite" />
 
-      <Search 
-        placeholder='Search customer satellite by name, country, date, mass, launcher...'
+      <Search
+        placeholder="Search customer satellite by name, country, date, mass, launcher..."
         value={searchValue}
         search={search}
         clearSearch={clearSearch}
@@ -58,7 +66,17 @@ const CustomerSatellite = () => {
                 </h2>
                 <p className="border-b-2 pb-2 flex justify-between">
                   <span className="font-semibold text-slate-500">Country</span>
-                  <span>{item.country}</span>
+                  <span>
+                    <span className='pe-2'>{item.country}</span>
+                    {item.flag && (
+                      <img
+                        className="w-10 inline rounded border"
+                        src={item.flag}
+                        alt=""
+                        width='40px'
+                      />
+                    )}
+                  </span>
                 </p>
                 <p className="border-b-2 pb-2 flex justify-between">
                   <span className="font-semibold text-slate-500">

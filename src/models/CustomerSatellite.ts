@@ -4,4 +4,5 @@ export interface CustomerSatellite {
   launch_date: string;
   mass: string;
   launcher: string;
+  flag: string;
 }

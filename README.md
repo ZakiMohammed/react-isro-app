@@ -1,4 +1,4 @@
-# 👋 Hello ISRO - React, ISRO-API, Redux, TypeScript, Vite, TailwindCSS, DaisyUI
+# 👋 Hello ISRO - ISRO-API + React
 
 This app is consuming the public API created by Indian Space Research Organization (ISRO).
 

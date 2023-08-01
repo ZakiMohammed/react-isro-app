@@ -1,4 +1,5 @@
 import { Centre } from './Centre';
+import { Country } from './Country';
 import { CustomerSatellite } from './CustomerSatellite';
 import { Launcher } from './Launcher';
 import { Spacecraft } from './Spacecraft';
@@ -23,6 +24,7 @@ export interface CustomerSatelliteState {
   customerSatellites: CustomerSatellite[] | null;
   filtered: CustomerSatellite[] | null;
   searchValue: string | null;
+  countries: Country[] | null;
 }
 
 export interface CentreState {

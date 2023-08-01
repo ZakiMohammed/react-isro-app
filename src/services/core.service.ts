@@ -1,8 +1,8 @@
 import axios from 'axios';
-import { url } from '../constants/core.constant';
+import { urlIsro } from '../constants/core.constant';
 
 const axiosInstance = axios.create({
-  baseURL: url.base,
+  baseURL: urlIsro.base,
 });
 
 const get = async <T>(url: string): Promise<T> => {
