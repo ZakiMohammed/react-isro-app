@@ -1,5 +1,5 @@
 export const constants = {
-  appName: '👋 Hello ISRO',
+  appName: 'Hello ISRO',
 } as const;
 
 export const urlIsro = {

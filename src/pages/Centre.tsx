@@ -13,6 +13,7 @@ import { useAppSelector, useAppDispatch } from '../hooks';
 import { setLoading } from '../reducers/AppReducers';
 import NoRecords from '../components/NoRecords';
 import Search from '../components/Search';
+import Icon from '../components/Icon';
 
 const Centre = () => {
   const filtered = useAppSelector(selectCentresFiltered);
@@ -39,7 +40,7 @@ const Centre = () => {
 
   return (
     <Container>
-      <PageTitle title="🏛️ Centre" />
+      <PageTitle title="Centre" icon={'centre'} />
 
       <Search
         placeholder="Search customer satellite by name, place, state..."
@@ -53,8 +54,9 @@ const Centre = () => {
           {filtered.map(item => (
             <div className="card bg-base-100 shadow-xl" key={item.id}>
               <div className="card-body">
-                <h2 className="card-title justify-between pb-4">
-                  🏛️ {item.name}
+                <h2 className="card-title pb-4">
+                  <Icon icon="centre" classes="w-8" />
+                  <span>{item.name}</span>
                 </h2>
                 <p className="border-b-2 pb-2 flex justify-between">
                   <span className="font-semibold text-slate-500">Place</span>

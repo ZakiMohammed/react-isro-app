@@ -1,3 +1,6 @@
+import iconRocket from './../assets/icons/rocket.png'
+import iconWave from './../assets/icons/wave.png'
+
 const Home = () => {
   return (
     <>
@@ -5,10 +8,12 @@ const Home = () => {
         <div className="hero-content text-center">
           <div className="max-w-md">
             <h1 className="text-9xl mb-5 animate-bounce">
-              <div className="-rotate-45">🚀</div>
+              <div className="-rotate-45">
+                <img src={iconRocket} alt="" className='w-32 md:w-48 inline' />
+              </div>
             </h1>
             <h1 className="text-5xl font-bold py-6">
-              👋 Hello <span className="text-primary">ISRO</span>
+              <img src={iconWave} alt="" className='w-16 inline' /> Hello <span className="text-primary">ISRO</span>
             </h1>
             <p className="pb-3">
               This app is consuming the public API created by Indian Space

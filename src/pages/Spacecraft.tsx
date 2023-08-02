@@ -13,6 +13,7 @@ import {
 } from '../reducers/SpacecraftReducers';
 import NoRecords from '../components/NoRecords';
 import Search from '../components/Search';
+import Icon from '../components/Icon';
 
 const Spacecraft = () => {
   const filtered = useAppSelector(selectSpacecraftsFiltered);
@@ -39,10 +40,10 @@ const Spacecraft = () => {
 
   return (
     <Container>
-      <PageTitle title="🚀 Spacecraft" />
+      <PageTitle title="Spacecraft" icon={'rocket'} />
 
-      <Search 
-        placeholder='Search spacecrafts...'
+      <Search
+        placeholder="Search spacecrafts..."
         value={searchValue}
         search={search}
         clearSearch={clearSearch}
@@ -63,7 +64,9 @@ const Spacecraft = () => {
                   <td>{item.id}</td>
                   <td>
                     <div className="flex items-center space-x-3">
-                      <div className='text-4xl'>🚀</div>
+                      <div className="text-4xl">
+                        <Icon icon="rocket" classes="w-10" />
+                      </div>
                       <div>
                         <div className="font-bold">{item.name}</div>
                         <div className="text-sm opacity-50">Spacecraft</div>

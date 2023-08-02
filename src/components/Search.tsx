@@ -1,6 +1,7 @@
 import { ChangeEvent } from 'react';
 import { useAppDispatch } from '../hooks';
 import { SearchModel } from '../models/Search';
+import iconCancel from './../assets/icons/cancel.png';
 
 const Search = ({ placeholder, value, search, clearSearch }: SearchModel) => {
   const dispatch = useAppDispatch();
@@ -27,11 +28,10 @@ const Search = ({ placeholder, value, search, clearSearch }: SearchModel) => {
           placeholder={placeholder}
           className="input input-bordered w-full"
           onChange={onSearch}
-          autoFocus
           value={value || ''}
         />
         <button className="btn btn-light ms-3" onClick={onClearSearch}>
-          ❌
+          <img src={iconCancel} alt="" className="w-4 inline m-0" />
         </button>
       </div>
     </>

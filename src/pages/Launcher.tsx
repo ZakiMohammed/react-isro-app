@@ -13,6 +13,7 @@ import {
 } from '../reducers/LauncherReducers';
 import NoRecords from '../components/NoRecords';
 import Search from '../components/Search';
+import Icon from '../components/Icon';
 
 const Launcher = () => {
   const filtered = useAppSelector(selectLaunchersFiltered);
@@ -39,10 +40,10 @@ const Launcher = () => {
 
   return (
     <Container>
-      <PageTitle title="🛩️ Launcher" />
+      <PageTitle title="Launcher" icon={'launcher'} />
 
-      <Search 
-        placeholder='Search launcher...'
+      <Search
+        placeholder="Search launcher..."
         value={searchValue}
         search={search}
         clearSearch={clearSearch}
@@ -63,7 +64,9 @@ const Launcher = () => {
                   <td>{index + 1}</td>
                   <td>
                     <div className="flex items-center space-x-3">
-                      <div className="text-4xl">🛩️</div>
+                      <div className="text-4xl">
+                        <Icon icon="launcher" classes="w-10" />
+                      </div>
                       <div>
                         <div className="font-bold">{item.id}</div>
                         <div className="text-sm opacity-50">Launcher</div>

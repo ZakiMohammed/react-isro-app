@@ -15,6 +15,7 @@ import {
 } from '../reducers/CustomerSatelliteReducers';
 import NoRecords from '../components/NoRecords';
 import Search from '../components/Search';
+import Icon from '../components/Icon';
 
 const CustomerSatellite = () => {
   const countries = useAppSelector(selectCountries);
@@ -47,7 +48,7 @@ const CustomerSatellite = () => {
 
   return (
     <Container>
-      <PageTitle title="🛰️ Customer Satellite" />
+      <PageTitle title="Customer Satellite" icon='satellite' />
 
       <Search
         placeholder="Search customer satellite by name, country, date, mass, launcher..."
@@ -62,18 +63,19 @@ const CustomerSatellite = () => {
             <div className="card bg-base-100 shadow-xl" key={item.id}>
               <div className="card-body">
                 <h2 className="card-title justify-between pb-4">
-                  🛰️ {item.id}
+                  <Icon icon="satellite" classes="w-8" />
+                  <span>{item.id}</span>
                 </h2>
                 <p className="border-b-2 pb-2 flex justify-between">
                   <span className="font-semibold text-slate-500">Country</span>
                   <span>
-                    <span className='pe-2'>{item.country}</span>
+                    <span className="pe-2">{item.country}</span>
                     {item.flag && (
                       <img
                         className="w-10 inline rounded border"
                         src={item.flag}
                         alt=""
-                        width='40px'
+                        width="40px"
                       />
                     )}
                   </span>

@@ -1,6 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import { constants } from '../constants/core.constant';
 import Navbar from './Navbar';
+import iconWave from './../assets/icons/wave.png'
 
 const Header = () => {
   return (
@@ -30,7 +31,7 @@ const Header = () => {
             </ul>
           </div>
           <NavLink className="btn btn-ghost normal-case font-bold text-xl" to={'/'}>
-            {constants.appName}
+            <img src={iconWave} alt="" className='w-8 inline' /> {constants.appName}
           </NavLink>
         </div>
         <div className="navbar-end w-3/4 hidden xl:flex">

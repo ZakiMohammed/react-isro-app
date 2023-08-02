@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import Icon from './Icon';
 
 const Navbar = () => {
   const activeNavLink = ({ isActive }: { isActive: boolean }) =>
@@ -8,32 +9,32 @@ const Navbar = () => {
     <>
       <li>
         <NavLink className={activeNavLink} to={'/'}>
-          🏚️ Home
+          <Icon icon="house" classes="w-4" /> Home
         </NavLink>
       </li>
       <li>
         <NavLink className={activeNavLink} to={'/spacecrafts'}>
-          🚀 Spacecraft
+          <Icon icon="rocket" classes="w-4" /> Spacecraft
         </NavLink>
       </li>
       <li>
         <NavLink className={activeNavLink} to={'/launchers'}>
-          🛩️ Launcher
+          <Icon icon="launcher" classes="w-4" /> Launcher
         </NavLink>
       </li>
       <li>
         <NavLink className={activeNavLink} to={'/customer-satellites'}>
-          🛰️ Customer Satellite
+          <Icon icon="satellite" classes="w-4" /> Customer Satellite
         </NavLink>
       </li>
       <li>
         <NavLink className={activeNavLink} to={'/centers'}>
-          🏛️ Centre
+          <Icon icon="centre" classes="w-4" /> Centre
         </NavLink>
       </li>
       <li>
         <NavLink className={activeNavLink} to={'/about'}>
-          💖 About
+          <Icon icon="heart" classes="w-4" /> About
         </NavLink>
       </li>
     </>
