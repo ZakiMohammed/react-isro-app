@@ -12,6 +12,7 @@ ___
 Check out the CodeOmelet blog post for this project.
 
 Link: https://codeomelet.com/posts/isro-react-app-initial-setup-part-1
+Link: https://codeomelet.com/posts/isro-react-app-working-on-the-components-part-2
 ___
 
 ## Run App
